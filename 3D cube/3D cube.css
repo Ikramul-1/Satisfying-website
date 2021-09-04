@@ -1,0 +1,79 @@
+body {
+				background-color: #000a29;
+}
+/* You need all the positioning in the wrapper class.*/
+.wrapper {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				perspective: 1500px;
+}
+
+/*In this class you need a css rule transform-style:preserve-3D; so everything inside that div class is 3D*/
+.box {
+				position: relative;
+				transform-style: preserve-3D;
+				animation-name: rotate;
+				animation-duration: 10s;
+				animation-timing-function: linear;
+				animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+				0% {
+								transform: rotate3d(0,0,0,0);
+				}
+				100% {
+								transform: rotate3d(1,1,1,360deg);
+				}
+}
+
+.b {
+				position: absolute;
+				width: 400px;
+				height: 400px;
+				border: 8px solid #6a7fd8;
+				transition: background-color 600ms ease, border-radius 200ms ease-in, border 500ms ease-in-out, opacity 310ms ease-in;
+				border-radius: 0px;
+}
+
+.b:hover {
+				border-radius: 10px;
+				border: 8px dashed #eaffea;
+				opacity: 60%;
+				background-color: #d4f6ff;
+}
+
+.box-front {
+				transform: translateX(-200px) translateY(-200px) translateZ(200px);
+				background-color: #2aadff;
+}
+
+.box-back {
+				transform: translateX(-200px) translateY(-200px) translateZ(-200px);
+				background-color: #0083ff;
+}
+
+.box-right {
+				transform: translateY(-200px) rotateY(90deg);
+				background-color: #67ff00;
+}
+
+.box-left {
+				transform: translateY(-200px) translateX(-400px) rotateY(90deg);
+				background-color: #00ffd6;
+}
+
+.box-down {
+				transform: translateX(-200px) rotateX(90deg);
+				background-color: #1200ff;
+}
+
+.box-up {
+				transform: translateX(-200px) translateY(-400px) rotateX(90deg);
+				background-color: #6600ff;
+}
+
+.box {
+				transform: rotateX(90deg) rotateY(90deg);
+}
